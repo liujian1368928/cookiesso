@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+   <!-- <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" /> --> 
+    <package name="sso" namespace="/sso" extends="struts-default">
+       <!-- <action name="userinfoaction" class="userinfoaction">
+           <result name="success">index.jsp</result>
+
+        </action> -->
+        <action name="login" class="fd.sso.ssologinAction" method="sso">
+           <result name="success" type="redirect">${gotoUrl}</result> 
+        </action>
+    </package>
+ 	<package name="demo1" namespace="/demo1" extends="struts-default">
+	  		<action name="main" class="fd.demo1.demo1Action" method="main">
+			   <result name="success">/demo1.jsp</result> 	
+			    <result name="login">/login.jsp</result> 	  
+		    </action>
+   </package>
+    	<package name="demo2" namespace="/demo2" extends="struts-default">
+	  		<action name="main" class="fd.demo2.demo2Action" method="main">
+			   <result name="success" >/demo2.jsp</result> 	
+		   	    <result name="login" >/login.jsp</result>   
+		    </action>
+   </package>
+    <!-- Add packages here -->
+
+</struts>
